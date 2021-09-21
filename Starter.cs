@@ -10,7 +10,7 @@ namespace HomeWork
         {
             var giftBoxService = new GiftBoxService();
 
-            giftBoxService.Put(new object[]
+            giftBoxService.Put(new Sweets[]
             {
                 new ChupaChups() { Taste = Taste.Chocolate },
                 new SugarDaddy() { Taste = Taste.Fruit },

@@ -6,9 +6,9 @@ namespace HomeWork.Services
 {
     public class GiftBoxService
     {
-        public object[] Gifts { get; private set; }
+        public Sweets[] Gifts { get; private set; }
 
-        public void Put(object[] gifts)
+        public void Put(Sweets[] gifts)
         {
             Gifts = gifts;
         }
@@ -19,12 +19,7 @@ namespace HomeWork.Services
 
             foreach (var item in Gifts)
             {
-                var gift = item as Sweets;
-
-                if (gift != null)
-                {
-                    result += gift.Weight;
-                }
+                result += item.Weight;
             }
 
             return result;
@@ -35,7 +30,7 @@ namespace HomeWork.Services
             Array.Sort(Gifts, new GiftsComparer());
         }
 
-        public object FindBy(int weight, Taste taste)
+        public Sweets FindBy(int weight, Taste taste)
         {
             return Gifts.FindBy(weight, taste);
         }

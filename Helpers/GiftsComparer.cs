@@ -10,22 +10,14 @@ namespace HomeWork.Helpers
             var xSweets = x as Sweets;
             var ySweets = y as Sweets;
 
-            if (xSweets == null || ySweets == null)
+            switch (xSweets?.Weight - ySweets?.Weight)
             {
-                return 0;
-            }
-
-            if (xSweets.Weight > ySweets.Weight)
-            {
-                return 1;
-            }
-            else if (xSweets.Weight < ySweets.Weight)
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
+                case > 0:
+                    return 1;
+                case < 0:
+                    return -1;
+                default:
+                    return 0;
             }
         }
     }

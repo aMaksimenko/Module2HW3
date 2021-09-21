@@ -4,16 +4,14 @@ namespace HomeWork.Helpers
 {
     public static class ArrayExtension
     {
-        public static object FindBy(this object[] sourceArray, int weight, Taste taste)
+        public static Sweets FindBy(this Sweets[] sourceArray, int weight, Taste taste)
         {
             Sweets result = null;
             foreach (var item in sourceArray)
             {
-                var sweets = item as Sweets;
-
-                if (sweets?.Weight == weight && sweets?.Taste == taste)
+                if (item != null && item.Weight == weight && item.Taste == taste)
                 {
-                    result = sweets;
+                    result = item;
                     break;
                 }
             }
